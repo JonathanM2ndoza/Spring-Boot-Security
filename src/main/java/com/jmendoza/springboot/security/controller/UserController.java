@@ -35,7 +35,7 @@ public class UserController {
     }
 
     @PostMapping("/users")
-    public ResponseEntity<User> createUser(@Valid @RequestBody User user) {
+    public ResponseEntity<User> createUser(@Valid @RequestBody User user) throws Throwable {
         User userCreated = userService.createUser(user);
         return ResponseEntity.created(URI.create("/users/" + userCreated.getId())).body(userCreated);
     }
