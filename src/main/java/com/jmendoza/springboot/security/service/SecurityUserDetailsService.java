@@ -12,7 +12,7 @@ import java.util.Collections;
 import java.util.Optional;
 
 @Service
-public class CustomUserDetailsService implements UserDetailsService {
+public class SecurityUserDetailsService implements UserDetailsService {
 
     @Autowired
     private UserRepository userRepository;

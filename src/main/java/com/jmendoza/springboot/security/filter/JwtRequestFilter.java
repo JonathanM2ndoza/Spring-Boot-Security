@@ -1,6 +1,6 @@
 package com.jmendoza.springboot.security.filter;
 
-import com.jmendoza.springboot.security.service.CustomUserDetailsService;
+import com.jmendoza.springboot.security.service.SecurityUserDetailsService;
 import com.jmendoza.springboot.security.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -20,7 +20,7 @@ import java.io.IOException;
 public class JwtRequestFilter extends OncePerRequestFilter {
 
     @Autowired
-    private CustomUserDetailsService customUserDetailsService;
+    private SecurityUserDetailsService securityUserDetailsService;
 
     @Autowired
     private JwtUtil jwtUtil;
@@ -41,9 +41,9 @@ public class JwtRequestFilter extends OncePerRequestFilter {
 
         if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
 
-            UserDetails userDetails = customUserDetailsService.loadUserByUsername(username);
+            UserDetails userDetails = securityUserDetailsService.loadUserByUsername(username);
 
-            if (jwtUtil.validateToken(jwt, userDetails)) {
+            if (jwtUtil.validateToken(jwt, userDetails).booleanValue()) {
 
                 UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(
                         userDetails, null, userDetails.getAuthorities());
