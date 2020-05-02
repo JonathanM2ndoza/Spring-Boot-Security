@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class UserService {
@@ -17,7 +18,13 @@ public class UserService {
     private UserRepository userRepository;
 
     public List<User> getUsers() {
-        return userRepository.findAll();
+
+        List<User> userList = userRepository.findAll();
+
+        return userList.stream().map(user -> {
+            user.setPassword(null);
+            return user;
+        }).collect(Collectors.toList());
     }
 
     public User getUser(Long userId) throws ResourceNotFoundException {
