@@ -6,7 +6,6 @@ import com.jmendoza.springboot.security.model.User;
 import com.jmendoza.springboot.security.repository.UserRepository;
 import org.apache.commons.lang3.SerializationUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -27,9 +26,6 @@ public class UserService {
     }
 
     public User createUser(User user) {
-        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
-        String password = user.getPassword();
-        user.setPassword(bCryptPasswordEncoder.encode(password));
         userRepository.save(user);
         User userResult = SerializationUtils.clone(user);
         userResult.setPassword(null);
