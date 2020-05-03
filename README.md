@@ -18,7 +18,36 @@ jmendoza@jmendoza-ThinkPad-T420:~$ docker inspect postgres
 
 ![Screenshot](/prtsc/Spring-boot-security-4.png)
 
-To be continued...
+### Create Users
+
+![Screenshot](/prtsc/Spring-boot-security-5.png)
+
+![Screenshot](/prtsc/Spring-boot-security-6.png)
+
+### BD PostgreSQL
+
+![Screenshot](/prtsc/Spring-boot-security-7.png)
+
+![Screenshot](/prtsc/Spring-boot-security-8.png)
+ 
+Note: I am using pgAdmin 4 (Container), is a GUI client for PostgreSQL
+
+### Request for JSON Web Token (JWT)
+
+![Screenshot](/prtsc/Spring-boot-security-9.png)
+
+### Get User with JWT
+
+![Screenshot](/prtsc/Spring-boot-security-10.png)
+
+### Get User with JWT expired
+
+![Screenshot](/prtsc/Spring-boot-security-11.png)
+
+
+
+
+
 
 
 
