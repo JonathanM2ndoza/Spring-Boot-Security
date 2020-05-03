@@ -1,6 +1,6 @@
 # Spring-Boot-Security
 
-Example of RESTful API with Spring Boot and Spring Security. JSON Web Tokens (JWT), JPA, DB PostgreSQL
+Example of RESTful API with Spring Boot and Spring Security. JSON Web Tokens (JWT), JPA, DB PostgreSQL. Apache Commons logging used by Spring Boot for all internal logging.
 
 ### Start a PostgreSQL server instance with Docker Hub
 
@@ -43,11 +43,3 @@ Note: I am using pgAdmin 4 (Container), is a GUI client for PostgreSQL
 ### Get User with JWT expired
 
 ![Screenshot](/prtsc/Spring-boot-security-11.png)
-
-
-
-
-
-
-
-
