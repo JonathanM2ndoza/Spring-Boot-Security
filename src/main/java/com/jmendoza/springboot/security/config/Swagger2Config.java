@@ -1,7 +1,9 @@
 package com.jmendoza.springboot.security.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.env.Environment;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -14,6 +16,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 public class Swagger2Config {
+
+    @Autowired
+    private Environment env;
+
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2).select()
@@ -25,12 +31,12 @@ public class Swagger2Config {
 
     private ApiInfo apiEndPointsInfo() {
 
-        return new ApiInfoBuilder().title("Spring Boot Security RESTful API ")
-                .description("Example of RESTful API with Spring Boot and Spring Security")
-                .contact(new Contact("Jonathan Mendoza", "www.linkedin.com/in/jonathansmendoza", "jonathan.m2ndoza@gmail.com"))
-                .license("Apache 2.0")
-                .licenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html")
-                .version("1.0.0")
+        return new ApiInfoBuilder().title(env.getRequiredProperty("swagger2.api.title"))
+                .description(env.getRequiredProperty("swagger2.api.description"))
+                .contact(new Contact(env.getRequiredProperty("swagger2.api.contact.name"), env.getRequiredProperty("swagger2.api.contact.url"), env.getRequiredProperty("swagger2.api.contact.email")))
+                .license(env.getRequiredProperty("swagger2.api.license"))
+                .licenseUrl(env.getRequiredProperty("swagger2.api.license-url"))
+                .version(env.getRequiredProperty("swagger2.api.version"))
                 .build();
     }
 }

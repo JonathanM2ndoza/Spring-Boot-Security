@@ -49,7 +49,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers(HttpMethod.POST, env.getRequiredProperty("security.uri.login")).permitAll()
                 .antMatchers(HttpMethod.POST, env.getRequiredProperty("security.uri.user")).permitAll()
-                .antMatchers(HttpMethod.GET, env.getRequiredProperty("security.uri.api.docs")).permitAll()
+                .antMatchers(HttpMethod.GET, env.getRequiredProperty("security.uri.swagger2.docs")).permitAll()
+                .antMatchers(HttpMethod.GET, env.getRequiredProperty("security.uri.swagger2.ui")).permitAll()
+                .antMatchers(HttpMethod.GET, env.getRequiredProperty("security.uri.swagger2.ui.webjars")).permitAll()
                 .anyRequest().authenticated().and().
                 exceptionHandling().and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
