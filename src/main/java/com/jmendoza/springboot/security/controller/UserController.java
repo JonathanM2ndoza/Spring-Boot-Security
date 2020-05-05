@@ -3,6 +3,7 @@ package com.jmendoza.springboot.security.controller;
 import com.jmendoza.springboot.security.exception.ResourceNotFoundException;
 import com.jmendoza.springboot.security.model.User;
 import com.jmendoza.springboot.security.service.UserService;
+import io.swagger.annotations.ApiImplicitParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +21,7 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/users")
+    @ApiImplicitParam(name = "Authorization", value = "Access Token", required = true, paramType = "header", dataType = "String", example = "access_token")
     public ResponseEntity<List<User>> getUsers() {
         List<User> userList = userService.getUsers();
         HttpHeaders headers = new HttpHeaders();
@@ -28,6 +30,7 @@ public class UserController {
     }
 
     @GetMapping("/users/{id}")
+    @ApiImplicitParam(name = "Authorization", value = "Access Token", required = true, paramType = "header", dataType = "String", example = "access_token")
     public ResponseEntity<User> getUser(
             @PathVariable(value = "id") Long userId) throws ResourceNotFoundException {
         User user = userService.getUser(userId);
@@ -41,6 +44,7 @@ public class UserController {
     }
 
     @PutMapping("/users/{id}")
+    @ApiImplicitParam(name = "Authorization", value = "Access Token", required = true, paramType = "header", dataType = "String", example = "access_token")
     public ResponseEntity<User> updateUser(
             @PathVariable(value = "id") Long userId,
             @Valid @RequestBody User userDetails) throws ResourceNotFoundException {
@@ -49,6 +53,7 @@ public class UserController {
     }
 
     @DeleteMapping("/users/{id}")
+    @ApiImplicitParam(name = "Authorization", value = "Access Token", required = true, paramType = "header", dataType = "String", example = "access_token")
     public ResponseEntity deleteUser(
             @PathVariable(value = "id") Long userId) throws ResourceNotFoundException {
         userService.deleteUser(userId);

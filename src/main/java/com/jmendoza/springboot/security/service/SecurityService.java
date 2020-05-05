@@ -1,5 +1,6 @@
 package com.jmendoza.springboot.security.service;
 
+import com.jmendoza.springboot.security.model.Security;
 import com.jmendoza.springboot.security.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -20,7 +21,7 @@ public class SecurityService {
     @Autowired
     private JwtUtil jwtUtil;
 
-    public String createToken(String email, String password) throws Exception {
+    public Security createToken(String email, String password) throws Exception {
 
         try {
             authenticationManager.authenticate(
@@ -31,6 +32,8 @@ public class SecurityService {
         }
 
         UserDetails userDetails = securityUserDetailsService.loadUserByUsername(email);
-        return jwtUtil.generateToken(userDetails);
+        Security security = new Security();
+        security.setToken(jwtUtil.generateToken(userDetails));
+        return security;
     }
 }

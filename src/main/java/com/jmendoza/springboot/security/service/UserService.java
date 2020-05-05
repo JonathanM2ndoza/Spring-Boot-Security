@@ -4,6 +4,7 @@ import com.jmendoza.springboot.security.constants.UserConstanst;
 import com.jmendoza.springboot.security.exception.ResourceNotFoundException;
 import com.jmendoza.springboot.security.model.User;
 import com.jmendoza.springboot.security.repository.UserRepository;
+import com.jmendoza.springboot.security.util.SecurityUtil;
 import org.apache.commons.lang3.SerializationUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,6 +14,9 @@ import java.util.stream.Collectors;
 
 @Service
 public class UserService {
+
+    @Autowired
+    SecurityUtil securityUtil;
 
     @Autowired
     private UserRepository userRepository;
@@ -33,6 +37,7 @@ public class UserService {
     }
 
     public User createUser(User user) {
+        user.setPassword(securityUtil.passwordEncoder(user.getPassword()));
         userRepository.save(user);
         User userResult = SerializationUtils.clone(user);
         userResult.setPassword(null);

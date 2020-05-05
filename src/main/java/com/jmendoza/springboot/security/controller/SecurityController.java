@@ -1,7 +1,7 @@
 package com.jmendoza.springboot.security.controller;
 
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
+import com.jmendoza.springboot.security.model.Security;
+import com.jmendoza.springboot.security.model.User;
 import com.jmendoza.springboot.security.service.SecurityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -19,17 +19,13 @@ public class SecurityController {
     SecurityService securityService;
 
     @PostMapping("/login")
-    public ResponseEntity<String> createToken(@RequestBody String requestBody) throws Exception {
-
-        JsonObject jsonObject = JsonParser.parseString(requestBody).getAsJsonObject();
-        String token = securityService.createToken(jsonObject.get("email").getAsString(), jsonObject.get("password").getAsString());
+    public ResponseEntity<Security> createToken(@RequestBody User user) throws Exception {
+        Security security = securityService.createToken(user.getEmail(), user.getPassword());
 
         HttpHeaders headers = new HttpHeaders();
         headers.add("Responded", "SecurityController");
 
-        JsonObject jsonObject1 = new JsonObject();
-        jsonObject1.addProperty("token", token);
-        return ResponseEntity.ok().headers(headers).body(jsonObject1.toString());
+        return ResponseEntity.ok().headers(headers).body(security);
     }
 
 }
