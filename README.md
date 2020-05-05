@@ -1,6 +1,6 @@
 # Spring-Boot-Security
 
-Example of RESTful API with Spring Boot and Spring Security. JSON Web Tokens (JWT), JPA, DB PostgreSQL. Apache Commons logging used by Spring Boot for all internal logging.
+Example of RESTful API with Spring Boot and Spring Security. JSON Web Tokens (JWT), JPA, DB PostgreSQL, Swagger for RESTful API Documentation. 
 
 ### Start a PostgreSQL server instance with Docker Hub
 
