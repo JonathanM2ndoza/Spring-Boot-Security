@@ -60,6 +60,7 @@ Try it out
 
 ![Screenshot](/prtsc/Spring-boot-security-15.png)
 
+![Screenshot](/prtsc/Spring-boot-security-16.png)
 
 Models
 
