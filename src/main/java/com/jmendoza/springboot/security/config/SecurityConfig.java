@@ -45,13 +45,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
+
+        String[] whiteList = env.getRequiredProperty("security.uri.white-list").split(",");
+
         httpSecurity.csrf().disable()
                 .authorizeRequests()
                 .antMatchers(HttpMethod.POST, env.getRequiredProperty("security.uri.login")).permitAll()
                 .antMatchers(HttpMethod.POST, env.getRequiredProperty("security.uri.user")).permitAll()
-                .antMatchers(HttpMethod.GET, env.getRequiredProperty("security.uri.swagger2.docs")).permitAll()
-                .antMatchers(HttpMethod.GET, env.getRequiredProperty("security.uri.swagger2.ui")).permitAll()
-                .antMatchers(HttpMethod.GET, env.getRequiredProperty("security.uri.swagger2.ui.webjars")).permitAll()
+                .antMatchers(whiteList).permitAll()
                 .anyRequest().authenticated().and().
                 exceptionHandling().and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
