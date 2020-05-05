@@ -43,3 +43,24 @@ Note: I am using pgAdmin 4 (Container), is a GUI client for PostgreSQL
 ### Get User with JWT expired
 
 ![Screenshot](/prtsc/Spring-boot-security-11.png)
+
+## Swagger
+
+http://localhost:8083/swagger-ui.html#/
+
+![Screenshot](/prtsc/Spring-boot-security-12.png)
+
+Controllers
+
+![Screenshot](/prtsc/Spring-boot-security-13.png)
+
+![Screenshot](/prtsc/Spring-boot-security-14.png)
+
+Try it out
+
+![Screenshot](/prtsc/Spring-boot-security-15.png)
+
+
+Models
+
+![Screenshot](/prtsc/Spring-boot-security-17.png)
