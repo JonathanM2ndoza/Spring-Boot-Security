@@ -38,7 +38,7 @@ public class UserService {
     }
 
     public User createUser(User user) throws GlobalException {
-        if (userRepository.existsByEmail(user.getEmail()))
+        if (userRepository.existsByEmail(user.getEmail()).booleanValue())
             throw new GlobalException("This email is already registered");
 
         user.setPassword(securityUtil.passwordEncoder(user.getPassword()));
