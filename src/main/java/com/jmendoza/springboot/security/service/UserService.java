@@ -48,14 +48,14 @@ public class UserService {
         return userResult;
     }
 
-    public User updateUser(Long userId, User userDetails) throws ResourceNotFoundException {
+    public void updateUser(Long userId, User userDetails) throws ResourceNotFoundException {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found :: " + userId));
 
         user.setEmail(userDetails.getEmail());
         user.setLastName(userDetails.getLastName());
         user.setFirstName(userDetails.getFirstName());
-        return userRepository.save(user);
+        userRepository.save(user);
     }
 
     public void deleteUser(Long userId) throws ResourceNotFoundException {
