@@ -10,7 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -35,12 +34,6 @@ public class UserController {
             @PathVariable(value = "id") Long userId) throws ResourceNotFoundException {
         User user = userService.getUser(userId);
         return ResponseEntity.ok().body(user);
-    }
-
-    @PostMapping("/users")
-    public ResponseEntity<User> createUser(@Valid @RequestBody User user) throws Throwable {
-        User userCreated = userService.createUser(user);
-        return ResponseEntity.created(URI.create("/users/" + userCreated.getId())).body(userCreated);
     }
 
     @PutMapping("/users/{id}")
