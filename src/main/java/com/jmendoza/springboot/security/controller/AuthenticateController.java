@@ -19,7 +19,7 @@ import java.net.URI;
 public class AuthenticateController {
 
     @Autowired
-    AuthenticateService authenticateService;
+    private AuthenticateService authenticateService;
     @Autowired
     private UserService userService;
 
