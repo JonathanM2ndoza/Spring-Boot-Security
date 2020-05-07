@@ -1,7 +1,8 @@
 package com.jmendoza.springboot.security.controller;
 
-import com.jmendoza.springboot.security.model.Security;
 import com.jmendoza.springboot.security.model.User;
+import com.jmendoza.springboot.security.model.request.SignInRequest;
+import com.jmendoza.springboot.security.model.response.SignInResponse;
 import com.jmendoza.springboot.security.service.AuthenticateService;
 import com.jmendoza.springboot.security.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,8 +31,8 @@ public class AuthenticateController {
     }
 
     @PostMapping("/signin")
-    public ResponseEntity<Security> createToken(@RequestBody User user) throws Exception {
-        Security security = authenticateService.createToken(user.getEmail(), user.getPassword());
+    public ResponseEntity<SignInResponse> createToken(@Valid @RequestBody SignInRequest signInRequest) throws Exception {
+        SignInResponse security = authenticateService.createToken(signInRequest.getEmail(), signInRequest.getPassword());
         return ResponseEntity.ok().body(security);
     }
 

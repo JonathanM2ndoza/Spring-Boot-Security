@@ -1,6 +1,6 @@
-package com.jmendoza.springboot.security.model;
+package com.jmendoza.springboot.security.model.response;
 
-public class Security {
+public class SignInResponse {
     private String token;
 
     public String getToken() {
