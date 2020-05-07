@@ -1,6 +1,7 @@
 package com.jmendoza.springboot.security.service;
 
 import com.jmendoza.springboot.security.constants.UserConstanst;
+import com.jmendoza.springboot.security.exception.GlobalException;
 import com.jmendoza.springboot.security.exception.ResourceNotFoundException;
 import com.jmendoza.springboot.security.model.User;
 import com.jmendoza.springboot.security.repository.UserRepository;
@@ -36,7 +37,10 @@ public class UserService {
                 .orElseThrow(() -> new ResourceNotFoundException(UserConstanst.USER_NOT_FOUND + userId));
     }
 
-    public User createUser(User user) {
+    public User createUser(User user) throws GlobalException {
+        if (userRepository.existsByEmail(user.getEmail()))
+            throw new GlobalException("This email is already registered");
+
         user.setPassword(securityUtil.passwordEncoder(user.getPassword()));
         userRepository.save(user);
         User userResult = SerializationUtils.clone(user);
