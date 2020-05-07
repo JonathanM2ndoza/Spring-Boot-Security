@@ -136,3 +136,176 @@ io.jsonwebtoken.ExpiredJwtException: JWT expired at 2020-05-04T22:47:53Z. Curren
 2020-05-06 20:15:42 [http-nio-8083-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
 2020-05-06 20:15:42 [http-nio-8083-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[User{id=1020, firstName='Jonathan', lastName='Mendoza', email='jmendoza@gmail.com', password='null' (truncated)...]
 2020-05-06 20:15:42 [http-nio-8083-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2020-05-06 20:27:25 [main] DEBUG o.s.web.context.ContextLoader - Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2020-05-06 20:27:25 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2830 ms
+2020-05-06 20:27:27 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-06 20:27:28 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 11 mappings in 'requestMappingHandlerMapping'
+2020-05-06 20:27:29 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-05-06 20:27:29 [main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-05-06 20:27:29 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-05-06 20:27:43 [http-nio-8083-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-05-06 20:27:43 [http-nio-8083-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2020-05-06 20:27:43 [http-nio-8083-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2020-05-06 20:27:43 [http-nio-8083-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+2020-05-06 20:27:43 [http-nio-8083-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/v1/auth/signup", parameters={}
+2020-05-06 20:27:43 [http-nio-8083-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.jmendoza.springboot.security.controller.AuthenticateController#createUser(User)
+2020-05-06 20:27:43 [http-nio-8083-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{id=0, firstName='Jonathan', lastName='Mendoza', email='jmendoza@gmail.com', password='123456',  (truncated)...]
+2020-05-06 20:27:43 [http-nio-8083-exec-1] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - ERROR: null value in column "created_at" violates not-null constraint
+  Detail: Failing row contains (1021, jmendoza@gmail.com, Jonathan, Mendoza, $2a$10$..DEDqkm5/jmQg9C.T0ZeegKUkewDi2IrzbIMbjPlJHIyaj0dWxoe, null).
+2020-05-06 20:27:43 [http-nio-8083-exec-1] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.jmendoza.springboot.security.exception.GlobalExceptionHandler#globalExceptionHandler(Exception, WebRequest)
+2020-05-06 20:27:43 [http-nio-8083-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-05-06 20:27:43 [http-nio-8083-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.jmendoza.springboot.security.exception.ErrorDetails@72a7c52f]
+2020-05-06 20:27:44 [http-nio-8083-exec-1] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [created_at]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement]
+2020-05-06 20:27:44 [http-nio-8083-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 500 INTERNAL_SERVER_ERROR
+2020-05-06 20:28:30 [http-nio-8083-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/v1/auth/signup", parameters={}
+2020-05-06 20:28:30 [http-nio-8083-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.jmendoza.springboot.security.controller.AuthenticateController#createUser(User)
+2020-05-06 20:28:30 [http-nio-8083-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{id=0, firstName='Jonathan', lastName='Mendoza', email='jmendoza@gmail.com', password='123456',  (truncated)...]
+2020-05-06 20:28:30 [http-nio-8083-exec-2] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - ERROR: relation "user_test" does not exist
+  Position: 13
+2020-05-06 20:28:30 [http-nio-8083-exec-2] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.jmendoza.springboot.security.exception.GlobalExceptionHandler#globalExceptionHandler(Exception, WebRequest)
+2020-05-06 20:28:30 [http-nio-8083-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-05-06 20:28:30 [http-nio-8083-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.jmendoza.springboot.security.exception.ErrorDetails@2fe915c6]
+2020-05-06 20:28:30 [http-nio-8083-exec-2] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.dao.InvalidDataAccessResourceUsageException: could not execute statement; SQL [n/a]; nested exception is org.hibernate.exception.SQLGrammarException: could not execute statement]
+2020-05-06 20:28:30 [http-nio-8083-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 500 INTERNAL_SERVER_ERROR
+2020-05-06 20:29:24 [main] DEBUG o.s.web.context.ContextLoader - Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2020-05-06 20:29:24 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2227 ms
+2020-05-06 20:29:26 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-06 20:29:26 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 11 mappings in 'requestMappingHandlerMapping'
+2020-05-06 20:29:27 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-05-06 20:29:27 [main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-05-06 20:29:27 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-05-06 20:29:38 [http-nio-8083-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-05-06 20:29:38 [http-nio-8083-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2020-05-06 20:29:38 [http-nio-8083-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2020-05-06 20:29:38 [http-nio-8083-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 7 ms
+2020-05-06 20:29:38 [http-nio-8083-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/v1/auth/signup", parameters={}
+2020-05-06 20:29:38 [http-nio-8083-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.jmendoza.springboot.security.controller.AuthenticateController#createUser(User)
+2020-05-06 20:29:38 [http-nio-8083-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{id=0, firstName='Jonathan', lastName='Mendoza', email='jmendoza@gmail.com', password='123456',  (truncated)...]
+2020-05-06 20:29:39 [http-nio-8083-exec-1] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - ERROR: null value in column "created_at" violates not-null constraint
+  Detail: Failing row contains (1023, null, jmendoza@gmail.com, Jonathan, Mendoza, $2a$10$N2e.ip6qlhglLPdQ4pxMxOSxyzMiV2x5LXv6GMcdLqDotlUUEdgd6).
+2020-05-06 20:29:39 [http-nio-8083-exec-1] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.jmendoza.springboot.security.exception.GlobalExceptionHandler#globalExceptionHandler(Exception, WebRequest)
+2020-05-06 20:29:39 [http-nio-8083-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-05-06 20:29:39 [http-nio-8083-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.jmendoza.springboot.security.exception.ErrorDetails@42bcab84]
+2020-05-06 20:29:39 [http-nio-8083-exec-1] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [created_at]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement]
+2020-05-06 20:29:39 [http-nio-8083-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 500 INTERNAL_SERVER_ERROR
+2020-05-06 20:37:11 [main] DEBUG o.s.web.context.ContextLoader - Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2020-05-06 20:37:11 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2511 ms
+2020-05-06 20:37:12 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-06 20:37:13 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 11 mappings in 'requestMappingHandlerMapping'
+2020-05-06 20:37:13 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-05-06 20:37:13 [main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-05-06 20:37:13 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-05-06 20:37:26 [http-nio-8083-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-05-06 20:37:26 [http-nio-8083-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2020-05-06 20:37:26 [http-nio-8083-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2020-05-06 20:37:26 [http-nio-8083-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 9 ms
+2020-05-06 20:37:26 [http-nio-8083-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/v1/auth/signup", parameters={}
+2020-05-06 20:37:26 [http-nio-8083-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.jmendoza.springboot.security.controller.AuthenticateController#createUser(User)
+2020-05-06 20:37:26 [http-nio-8083-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{id=0, firstName='Jonathan', lastName='Mendoza', email='jmendoza@gmail.com', password='123456',  (truncated)...]
+2020-05-06 20:37:27 [http-nio-8083-exec-1] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - ERROR: null value in column "created_at" violates not-null constraint
+  Detail: Failing row contains (1024, null, jmendoza@gmail.com, Jonathan, Mendoza, $2a$10$lz55ektg9.YhhdAT3T/zD.EVNKiEJo1PPiUnDOln465gCyVQgicWi).
+2020-05-06 20:37:27 [http-nio-8083-exec-1] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.jmendoza.springboot.security.exception.GlobalExceptionHandler#globalExceptionHandler(Exception, WebRequest)
+2020-05-06 20:37:27 [http-nio-8083-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-05-06 20:37:27 [http-nio-8083-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.jmendoza.springboot.security.exception.ErrorDetails@bfa6b07]
+2020-05-06 20:37:27 [http-nio-8083-exec-1] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [created_at]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement]
+2020-05-06 20:37:27 [http-nio-8083-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 500 INTERNAL_SERVER_ERROR
+2020-05-06 20:43:45 [main] DEBUG o.s.web.context.ContextLoader - Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2020-05-06 20:43:45 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2241 ms
+2020-05-06 20:43:47 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-06 20:43:47 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 11 mappings in 'requestMappingHandlerMapping'
+2020-05-06 20:43:48 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-05-06 20:43:48 [main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-05-06 20:43:48 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-05-06 20:43:53 [http-nio-8083-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-05-06 20:43:53 [http-nio-8083-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2020-05-06 20:43:53 [http-nio-8083-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2020-05-06 20:43:53 [http-nio-8083-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 11 ms
+2020-05-06 20:43:53 [http-nio-8083-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/v1/auth/signup", parameters={}
+2020-05-06 20:43:53 [http-nio-8083-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.jmendoza.springboot.security.controller.AuthenticateController#createUser(User)
+2020-05-06 20:43:53 [http-nio-8083-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{id=0, firstName='Jonathan', lastName='Mendoza', email='jmendoza@gmail.com', password='123456',  (truncated)...]
+2020-05-06 20:43:54 [http-nio-8083-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-05-06 20:43:54 [http-nio-8083-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [User{id=1025, firstName='Jonathan', lastName='Mendoza', email='jmendoza@gmail.com', password='null', (truncated)...]
+2020-05-06 20:43:54 [http-nio-8083-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 201 CREATED
+2020-05-06 20:44:36 [main] DEBUG o.s.web.context.ContextLoader - Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2020-05-06 20:44:36 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2376 ms
+2020-05-06 20:44:38 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-06 20:44:38 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 11 mappings in 'requestMappingHandlerMapping'
+2020-05-06 20:44:39 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-05-06 20:44:39 [main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-05-06 20:44:39 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-05-06 20:44:48 [http-nio-8083-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-05-06 20:44:48 [http-nio-8083-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2020-05-06 20:44:48 [http-nio-8083-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2020-05-06 20:44:48 [http-nio-8083-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+2020-05-06 20:44:48 [http-nio-8083-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/v1/auth/signup", parameters={}
+2020-05-06 20:44:48 [http-nio-8083-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.jmendoza.springboot.security.controller.AuthenticateController#createUser(User)
+2020-05-06 20:44:48 [http-nio-8083-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{id=0, firstName='Jonathan', lastName='Mendoza', email='jmendoza@gmail.com', password='123456',  (truncated)...]
+2020-05-06 20:44:49 [http-nio-8083-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-05-06 20:44:49 [http-nio-8083-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [User{id=1026, firstName='Jonathan', lastName='Mendoza', email='jmendoza@gmail.com', password='null', (truncated)...]
+2020-05-06 20:44:49 [http-nio-8083-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 201 CREATED
+2020-05-06 20:45:21 [http-nio-8083-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/v1/auth/signup", parameters={}
+2020-05-06 20:45:21 [http-nio-8083-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.jmendoza.springboot.security.controller.AuthenticateController#createUser(User)
+2020-05-06 20:45:21 [http-nio-8083-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{id=0, firstName='Jonathan', lastName='Mendoza', email='jmendoza@gmail.com', password='123456',  (truncated)...]
+2020-05-06 20:45:21 [http-nio-8083-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-05-06 20:45:21 [http-nio-8083-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [User{id=1027, firstName='Jonathan', lastName='Mendoza', email='jmendoza@gmail.com', password='null', (truncated)...]
+2020-05-06 20:45:21 [http-nio-8083-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 201 CREATED
+2020-05-06 20:45:33 [http-nio-8083-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/v1/auth/signup", parameters={}
+2020-05-06 20:45:33 [http-nio-8083-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.jmendoza.springboot.security.controller.AuthenticateController#createUser(User)
+2020-05-06 20:45:33 [http-nio-8083-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{id=0, firstName='Jonathan', lastName='Mendoza', email='jmendoza@gmail.com', password='123456',  (truncated)...]
+2020-05-06 20:45:33 [http-nio-8083-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-05-06 20:45:33 [http-nio-8083-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [User{id=1028, firstName='Jonathan', lastName='Mendoza', email='jmendoza@gmail.com', password='null', (truncated)...]
+2020-05-06 20:45:33 [http-nio-8083-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 201 CREATED
+2020-05-06 20:48:04 [main] DEBUG o.s.web.context.ContextLoader - Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2020-05-06 20:48:04 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2251 ms
+2020-05-06 20:48:06 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-06 20:48:06 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 11 mappings in 'requestMappingHandlerMapping'
+2020-05-06 20:48:07 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-05-06 20:48:07 [main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-05-06 20:48:07 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-05-06 20:48:36 [http-nio-8083-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-05-06 20:48:36 [http-nio-8083-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2020-05-06 20:48:36 [http-nio-8083-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2020-05-06 20:48:36 [http-nio-8083-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+2020-05-06 20:48:36 [http-nio-8083-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/v1/auth/signup", parameters={}
+2020-05-06 20:48:36 [http-nio-8083-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.jmendoza.springboot.security.controller.AuthenticateController#createUser(User)
+2020-05-06 20:48:36 [http-nio-8083-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{id=0, firstName='Jonathan', lastName='Mendoza', email='jmendoza@gmail.com', password='123456',  (truncated)...]
+2020-05-06 20:48:37 [http-nio-8083-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-05-06 20:48:37 [http-nio-8083-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [User{id=1029, firstName='Jonathan', lastName='Mendoza', email='jmendoza@gmail.com', password='null', (truncated)...]
+2020-05-06 20:48:37 [http-nio-8083-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 201 CREATED
+2020-05-06 20:59:20 [http-nio-8083-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/v1/auth/signup", parameters={}
+2020-05-06 20:59:20 [http-nio-8083-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.jmendoza.springboot.security.controller.AuthenticateController#createUser(User)
+2020-05-06 20:59:20 [http-nio-8083-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{id=0, firstName='Jonathan', lastName='Mendoza', email='jmendoza@gmail.com', password='123456',  (truncated)...]
+2020-05-06 20:59:20 [http-nio-8083-exec-3] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@18a5eed9 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2020-05-06 20:59:20 [http-nio-8083-exec-3] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@4b7851b5 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2020-05-06 20:59:20 [http-nio-8083-exec-3] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@71063486 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2020-05-06 20:59:20 [http-nio-8083-exec-3] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@78d6367 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2020-05-06 20:59:20 [http-nio-8083-exec-3] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@617f526a (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2020-05-06 20:59:20 [http-nio-8083-exec-3] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@68035209 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2020-05-06 20:59:20 [http-nio-8083-exec-3] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@2861e98b (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2020-05-06 20:59:20 [http-nio-8083-exec-3] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@449b21bb (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2020-05-06 20:59:20 [http-nio-8083-exec-3] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@5fecc740 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2020-05-06 20:59:20 [http-nio-8083-exec-3] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@2d8d55ae (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2020-05-06 20:59:20 [http-nio-8083-exec-3] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - ERROR: relation "user_test" does not exist
+  Position: 13
+2020-05-06 20:59:20 [http-nio-8083-exec-3] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.jmendoza.springboot.security.exception.GlobalExceptionHandler#globalExceptionHandler(Exception, WebRequest)
+2020-05-06 20:59:20 [http-nio-8083-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-05-06 20:59:20 [http-nio-8083-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.jmendoza.springboot.security.exception.ErrorDetails@200836dc]
+2020-05-06 20:59:20 [http-nio-8083-exec-3] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.dao.InvalidDataAccessResourceUsageException: could not execute statement; SQL [n/a]; nested exception is org.hibernate.exception.SQLGrammarException: could not execute statement]
+2020-05-06 20:59:20 [http-nio-8083-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 500 INTERNAL_SERVER_ERROR
+2020-05-06 20:59:35 [main] DEBUG o.s.web.context.ContextLoader - Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2020-05-06 20:59:35 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2145 ms
+2020-05-06 20:59:37 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-06 20:59:37 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 11 mappings in 'requestMappingHandlerMapping'
+2020-05-06 20:59:37 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-05-06 20:59:37 [main] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-05-06 20:59:37 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-05-06 21:00:00 [http-nio-8083-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-05-06 21:00:00 [http-nio-8083-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2020-05-06 21:00:00 [http-nio-8083-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2020-05-06 21:00:00 [http-nio-8083-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 10 ms
+2020-05-06 21:00:00 [http-nio-8083-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/v1/auth/signup", parameters={}
+2020-05-06 21:00:00 [http-nio-8083-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.jmendoza.springboot.security.controller.AuthenticateController#createUser(User)
+2020-05-06 21:00:00 [http-nio-8083-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [User{id=0, firstName='Jonathan', lastName='Mendoza', email='jmendoza@gmail.com', password='123456',  (truncated)...]
+2020-05-06 21:00:00 [http-nio-8083-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-05-06 21:00:00 [http-nio-8083-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [User{id=1031, firstName='Jonathan', lastName='Mendoza', email='jmendoza@gmail.com', password='null', (truncated)...]
+2020-05-06 21:00:00 [http-nio-8083-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 201 CREATED

@@ -1,10 +1,12 @@
 package com.jmendoza.springboot.security.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 
 @Entity
 @Table(name = "user_test")
@@ -28,6 +30,10 @@ public class User implements Serializable {
     private String email;
     @Column(name = "password", nullable = false)
     private String password;
+    @Column(name = "created_at", nullable = false)
+    @CreatedDate
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date createdAt;
 
     public long getId() {
         return id;
@@ -69,6 +75,14 @@ public class User implements Serializable {
         this.password = password;
     }
 
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -77,6 +91,7 @@ public class User implements Serializable {
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
+                ", createdAt=" + createdAt +
                 '}';
     }
 }
