@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @Component
-public class JwtRequestFilter extends OncePerRequestFilter {
+public class SecurityRequestFilter extends OncePerRequestFilter {
 
     @Autowired
     private SecurityUserDetailsService securityUserDetailsService;

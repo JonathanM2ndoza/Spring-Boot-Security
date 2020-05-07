@@ -1,6 +1,7 @@
 package com.jmendoza.springboot.security.config;
 
-import com.jmendoza.springboot.security.filter.JwtRequestFilter;
+import com.jmendoza.springboot.security.exception.AuthEntryPointJwt;
+import com.jmendoza.springboot.security.filter.SecurityRequestFilter;
 import com.jmendoza.springboot.security.service.SecurityUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -24,7 +25,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private SecurityUserDetailsService securityUserDetailsService;
 
     @Autowired
-    private JwtRequestFilter jwtRequestFilter;
+    private SecurityRequestFilter securityRequestFilter;
+
+    @Autowired
+    private AuthEntryPointJwt authEntryPointJwt;
 
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -50,10 +54,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         httpSecurity.csrf().disable()
                 .authorizeRequests()
                 .antMatchers(whiteList).permitAll()
-                .anyRequest().authenticated().and().
-                exceptionHandling().and().sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-        httpSecurity.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
+                .anyRequest().authenticated().and()
+                .exceptionHandling().authenticationEntryPoint(authEntryPointJwt).and()
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+        httpSecurity.addFilterBefore(securityRequestFilter, UsernamePasswordAuthenticationFilter.class);
 
     }
 }
