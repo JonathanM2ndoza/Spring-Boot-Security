@@ -1,5 +1,6 @@
 package com.jmendoza.springboot.security.service;
 
+import com.jmendoza.springboot.security.exception.GlobalException;
 import com.jmendoza.springboot.security.model.response.SignInResponse;
 import com.jmendoza.springboot.security.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,14 +22,14 @@ public class AuthenticateService {
     @Autowired
     private JwtUtil jwtUtil;
 
-    public SignInResponse createToken(String email, String password) throws Exception {
+    public SignInResponse createToken(String email, String password) throws GlobalException {
 
         try {
             authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(email, password)
             );
         } catch (BadCredentialsException e) {
-            throw new Exception("Incorrect username or password", e);
+            throw new GlobalException("Incorrect username or password", e);
         }
 
         UserDetails userDetails = securityUserDetailsService.loadUserByUsername(email);
