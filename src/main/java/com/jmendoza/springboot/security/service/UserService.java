@@ -50,7 +50,6 @@ public class UserService {
             throw new GlobalException("This email is already registered");
 
         Set<Role> roles = getRoles(role);
-
         user.setRoles(roles);
         user.setPassword(securityUtil.passwordEncoder(user.getPassword()));
         userRepository.save(user);
