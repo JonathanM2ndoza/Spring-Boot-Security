@@ -1,4 +1,4 @@
-package com.jmendoza.springboot.security.exception;
+package com.jmendoza.springboot.security.config;
 
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;

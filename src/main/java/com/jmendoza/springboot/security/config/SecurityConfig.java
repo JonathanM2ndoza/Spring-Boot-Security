@@ -1,6 +1,5 @@
 package com.jmendoza.springboot.security.config;
 
-import com.jmendoza.springboot.security.exception.AuthEntryPointJwt;
 import com.jmendoza.springboot.security.filter.SecurityRequestFilter;
 import com.jmendoza.springboot.security.service.SecurityUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,6 +57,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .exceptionHandling().authenticationEntryPoint(authEntryPointJwt).and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         httpSecurity.addFilterBefore(securityRequestFilter, UsernamePasswordAuthenticationFilter.class);
-
     }
 }
