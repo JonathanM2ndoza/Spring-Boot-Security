@@ -36,7 +36,7 @@ public class User implements Serializable {
     @CreatedDate
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt;
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "user_role",
             joinColumns = @JoinColumn(name = "users_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))

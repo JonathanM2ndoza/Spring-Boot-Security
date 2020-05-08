@@ -9,6 +9,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -24,6 +25,7 @@ public class UserController {
     private ModelMapper modelMapper;
 
     @GetMapping("/users")
+    @PreAuthorize("hasRole('ADMIN')")
     @ApiImplicitParam(name = "Authorization", value = "Access Token", required = true, paramType = "header", dataType = "String", example = "access_token")
     public ResponseEntity<List<User>> getUsers() {
         List<User> userList = userService.getUsers();
