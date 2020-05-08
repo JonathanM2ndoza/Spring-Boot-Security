@@ -40,10 +40,10 @@ public class SecurityRequestFilter extends OncePerRequestFilter {
                         .setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                 SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
             }
-            chain.doFilter(request, response);
         } catch (Exception e) {
             SecurityContextHolder.clearContext();
             e.printStackTrace();
+        } finally {
             chain.doFilter(request, response);
         }
     }
