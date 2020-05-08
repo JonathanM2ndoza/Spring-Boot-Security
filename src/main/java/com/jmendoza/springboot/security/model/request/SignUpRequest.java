@@ -4,6 +4,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.util.Date;
+import java.util.Set;
 
 public class SignUpRequest {
     @NotBlank
@@ -20,6 +21,7 @@ public class SignUpRequest {
     @Size(min = 6, max = 40)
     private String password;
     private Date createdAt;
+    private Set<String> role;
 
     public String getFirstName() {
         return firstName;
@@ -61,6 +63,14 @@ public class SignUpRequest {
         this.createdAt = createdAt;
     }
 
+    public Set<String> getRole() {
+        return role;
+    }
+
+    public void setRole(Set<String> role) {
+        this.role = role;
+    }
+
     @Override
     public String toString() {
         return "SignUpRequest{" +
@@ -69,6 +79,7 @@ public class SignUpRequest {
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", createdAt=" + createdAt +
+                ", role=" + role +
                 '}';
     }
 }

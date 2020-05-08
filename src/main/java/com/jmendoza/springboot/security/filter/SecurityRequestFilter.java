@@ -30,15 +30,17 @@ public class SecurityRequestFilter extends OncePerRequestFilter {
             throws ServletException, IOException {
         try {
             String jwt = request.getHeader("Authorization");
-            String username = jwtUtil.extractUsername(jwt);
-            UserDetails userDetails = securityUserDetailsService.loadUserByUsername(username);
-            if (jwtUtil.validateToken(jwt, userDetails).booleanValue()) {
+            if (jwt != null) {
+                String username = jwtUtil.extractUsername(jwt);
+                UserDetails userDetails = securityUserDetailsService.loadUserByUsername(username);
+                if (jwtUtil.validateToken(jwt, userDetails).booleanValue()) {
 
-                UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(
-                        userDetails, null, userDetails.getAuthorities());
-                usernamePasswordAuthenticationToken
-                        .setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
-                SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
+                    UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(
+                            userDetails, null, userDetails.getAuthorities());
+                    usernamePasswordAuthenticationToken
+                            .setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+                    SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
+                }
             }
         } catch (Exception e) {
             SecurityContextHolder.clearContext();

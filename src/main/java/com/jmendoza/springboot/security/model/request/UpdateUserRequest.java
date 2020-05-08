@@ -3,6 +3,7 @@ package com.jmendoza.springboot.security.model.request;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.util.Set;
 
 public class UpdateUserRequest {
     @NotBlank
@@ -15,6 +16,7 @@ public class UpdateUserRequest {
     @Size(max = 50)
     @Email
     private String email;
+    private Set<String> role;
 
     public String getFirstName() {
         return firstName;
@@ -38,5 +40,13 @@ public class UpdateUserRequest {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Set<String> getRole() {
+        return role;
+    }
+
+    public void setRole(Set<String> role) {
+        this.role = role;
     }
 }

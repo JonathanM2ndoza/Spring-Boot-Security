@@ -32,7 +32,7 @@ public class AuthenticateController {
 
     @PostMapping("/signup")
     public ResponseEntity<SignUpResponse> createUser(@Valid @RequestBody SignUpRequest signUpRequest) throws GlobalException {
-        SignUpResponse signUpResponse = convertToDto(userService.createUser(convertToEntity(signUpRequest)));
+        SignUpResponse signUpResponse = convertToDto(userService.createUser(convertToEntity(signUpRequest), signUpRequest.getRole()));
         return ResponseEntity.created(URI.create("/users/" + signUpResponse.getId())).body(signUpResponse);
     }
 
