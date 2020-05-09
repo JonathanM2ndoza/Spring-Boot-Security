@@ -35,6 +35,7 @@ public class UserController {
     }
 
     @GetMapping("/users/{id}")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('USER')")
     @ApiImplicitParam(name = "Authorization", value = "Access Token", required = true, paramType = "header", dataType = "String", example = "access_token")
     public ResponseEntity<User> getUser(
             @PathVariable(value = "id") Long userId) throws ResourceNotFoundException {
@@ -43,6 +44,7 @@ public class UserController {
     }
 
     @PutMapping("/users/{id}")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('USER')")
     @ApiImplicitParam(name = "Authorization", value = "Access Token", required = true, paramType = "header", dataType = "String", example = "access_token")
     public ResponseEntity updateUser(
             @PathVariable(value = "id") Long userId,
@@ -52,6 +54,7 @@ public class UserController {
     }
 
     @DeleteMapping("/users/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     @ApiImplicitParam(name = "Authorization", value = "Access Token", required = true, paramType = "header", dataType = "String", example = "access_token")
     public ResponseEntity deleteUser(
             @PathVariable(value = "id") Long userId) throws ResourceNotFoundException {
