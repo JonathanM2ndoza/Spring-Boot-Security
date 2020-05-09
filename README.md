@@ -1,6 +1,6 @@
 # Spring-Boot-Security
 
-Example of RESTful API with Spring Boot and Spring Security. JSON Web Tokens (JWT), Securing URLs using Roles, JPA, DB PostgreSQL, Swagger for RESTful API Documentation. 
+Example of RESTful API with Spring Boot and Spring Security. Securing URLs using JSON Web Tokens (JWT) and GrantedAuthority, JPA, DB PostgreSQL, Swagger for RESTful API Documentation. 
 
 ### Start a PostgreSQL server instance with Docker Hub
 
@@ -18,7 +18,7 @@ jmendoza@jmendoza-ThinkPad-T420:~$ docker inspect postgres
 
 ![Screenshot](/prtsc/Spring-boot-security-4.png)
 
-### Create Users
+### Sign Up - New Users
 
 ![Screenshot](/prtsc/Spring-boot-security-5.png)
 
@@ -26,17 +26,25 @@ jmendoza@jmendoza-ThinkPad-T420:~$ docker inspect postgres
 
 ### BD PostgreSQL
 
-![Screenshot](/prtsc/Spring-boot-security-7.png)
+Table users 
 
 ![Screenshot](/prtsc/Spring-boot-security-8.png)
+
+Table user_role
+
+![Screenshot](/prtsc/Spring-boot-security-8.1.png)
+
+Table role
+
+![Screenshot](/prtsc/Spring-boot-security-8.2.png)
  
 Note: I am using pgAdmin 4 (Container), is a GUI client for PostgreSQL
 
-### Request for JSON Web Token (JWT)
+### Sign In - Request for JSON Web Token (JWT)
 
 ![Screenshot](/prtsc/Spring-boot-security-9.png)
 
-### Get User with JWT
+### Get User with JWT and ROLE_ADMIN Role
 
 ![Screenshot](/prtsc/Spring-boot-security-10.png)
 
@@ -44,7 +52,14 @@ Note: I am using pgAdmin 4 (Container), is a GUI client for PostgreSQL
 
 ![Screenshot](/prtsc/Spring-boot-security-11.png)
 
-## Swagger
+### Get User with JWT and ROLE_USER Role
+
+![Screenshot](/prtsc/Spring-boot-security-11-1.png)
+
+![Screenshot](/prtsc/Spring-boot-security-11-2.png)
+
+
+## Swagger (Pending Update)
 
 http://localhost:8083/swagger-ui.html#/
 
