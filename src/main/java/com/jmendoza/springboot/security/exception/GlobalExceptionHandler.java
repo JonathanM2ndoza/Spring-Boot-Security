@@ -16,8 +16,8 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
     }
 
-    @ExceptionHandler({Exception.class, Throwable.class})
-    public ResponseEntity globalExceptionHandler(Exception ex, WebRequest request) {
+    @ExceptionHandler({GlobalException.class})
+    public ResponseEntity globalExceptionHandler(GlobalException ex, WebRequest request) {
         ErrorDetails errorDetails = new ErrorDetails(new Date(), ex.getMessage(), request.getDescription(false));
         return new ResponseEntity<>(errorDetails, HttpStatus.INTERNAL_SERVER_ERROR);
     }
