@@ -21,7 +21,7 @@ import java.io.IOException;
 @Component
 public class SecurityRequestFilter extends OncePerRequestFilter {
 
-    private static final Logger logger = LogManager.getLogger(SecurityRequestFilter.class);
+    private static final Logger loggerFilter = LogManager.getLogger(SecurityRequestFilter.class);
 
     @Autowired
     private SecurityUserDetailsService securityUserDetailsService;
@@ -47,7 +47,7 @@ public class SecurityRequestFilter extends OncePerRequestFilter {
             }
         } catch (Exception e) {
             SecurityContextHolder.clearContext();
-            logger.error(e.toString());
+            loggerFilter.error(e.toString());
         } finally {
             chain.doFilter(request, response);
         }
