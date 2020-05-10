@@ -47,7 +47,7 @@ public class SecurityRequestFilter extends OncePerRequestFilter {
             }
         } catch (Exception e) {
             SecurityContextHolder.clearContext();
-            loggerFilter.error(e.toString());
+            loggerFilter.error(e);
         } finally {
             chain.doFilter(request, response);
         }
