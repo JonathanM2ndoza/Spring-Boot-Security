@@ -23,8 +23,9 @@
         </RollingFile>
     </Appenders>
     <Loggers>
-        <Logger name="com.example.log4j2demo" level="debug" additivity="false">
+        <Logger name="com.jmendoza.springboot.security" level="debug" additivity="false">
             <AppenderRef ref="ConsoleAppender" />
+            <AppenderRef ref="FileAppender" />
         </Logger>
 
         <Root level="info">

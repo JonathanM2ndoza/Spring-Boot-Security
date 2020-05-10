@@ -2,6 +2,8 @@ package com.jmendoza.springboot.security.filter;
 
 import com.jmendoza.springboot.security.service.SecurityUserDetailsService;
 import com.jmendoza.springboot.security.util.JwtUtil;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -18,6 +20,8 @@ import java.io.IOException;
 
 @Component
 public class SecurityRequestFilter extends OncePerRequestFilter {
+
+    private static final Logger logger = LogManager.getLogger(SecurityRequestFilter.class);
 
     @Autowired
     private SecurityUserDetailsService securityUserDetailsService;
@@ -43,7 +47,7 @@ public class SecurityRequestFilter extends OncePerRequestFilter {
             }
         } catch (Exception e) {
             SecurityContextHolder.clearContext();
-            e.printStackTrace();
+            logger.error(e.toString());
         } finally {
             chain.doFilter(request, response);
         }
