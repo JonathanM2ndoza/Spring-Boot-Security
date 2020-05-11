@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Don't forget to set system property -Dlog4j2.contextSelector=org.apache.logging.log4j.core.async.AsyncLoggerContextSelector
+     to make all loggers asynchronous. -->
+
+<!-- No need to set system property "log4j2.contextSelector" to any value
+     when using <asyncLogger> or <asyncRoot>. -->
+
 <Configuration status="WARN" monitorInterval="30">
     <Properties>
         <Property name="LOG_PATTERN">
@@ -23,18 +29,18 @@
         </RollingFile>
     </Appenders>
     <Loggers>
-        <Logger name="com.jmendoza.springboot.security" level="debug" additivity="false">
+        <AsyncLogger name="com.jmendoza.springboot.security" level="debug" additivity="false">
             <AppenderRef ref="ConsoleAppender"/>
             <AppenderRef ref="FileAppender"/>
-        </Logger>
-        <Logger name="org.hibernate" level="info" additivity="false">
-            <AppenderRef ref="Console" />
+        </AsyncLogger>
+        <AsyncLogger name="org.hibernate" level="info" additivity="false">
+            <AppenderRef ref="ConsoleAppender"/>
             <AppenderRef ref="FileAppender"/>
-        </Logger>
-        <Logger name="org.hibernate.SQL" level="debug" additivity="false">
-            <AppenderRef ref="Console" />
+        </AsyncLogger>
+        <AsyncLogger name="org.hibernate.SQL" level="debug" additivity="false">
+            <AppenderRef ref="ConsoleAppender"/>
             <AppenderRef ref="FileAppender"/>
-        </Logger>
+        </AsyncLogger>
 
         <Root level="info">
             <AppenderRef ref="ConsoleAppender"/>
