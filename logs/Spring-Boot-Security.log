@@ -279,3 +279,16 @@
 [2020-05-10 22:33:58.018] [INFO] [jmendoza-ThinkPad-T420] [SpringContextShutdownHook] [orm.jpa.LocalContainerEntityManagerFactoryBean] | Closing JPA EntityManagerFactory for persistence unit 'default'
 [2020-05-10 22:33:58.019] [INFO] [jmendoza-ThinkPad-T420] [SpringContextShutdownHook] [zaxxer.hikari.HikariDataSource] | HikariPool-1 - Shutdown initiated...
 [2020-05-10 22:33:58.032] [INFO] [jmendoza-ThinkPad-T420] [SpringContextShutdownHook] [zaxxer.hikari.HikariDataSource] | HikariPool-1 - Shutdown completed.
+[2020-05-10 22:40:44.725] [INFO] [jmendoza-ThinkPad-T420] [main] [springboot.security.SpringBootSecurityApplication] | Starting SpringBootSecurityApplication on jmendoza-ThinkPad-T420 with PID 29669 (/home/jmendoza/IdeaProjects/JonathanM2ndoza/Spring-Boot-Security/target/classes started by jmendoza in /home/jmendoza/IdeaProjects/JonathanM2ndoza/Spring-Boot-Security)
+[2020-05-10 22:40:44.966] [DEBUG] [jmendoza-ThinkPad-T420] [main] [springboot.security.SpringBootSecurityApplication] | Running with Spring Boot v2.2.6.RELEASE, Spring v5.2.5.RELEASE
+[2020-05-10 22:40:44.967] [INFO] [jmendoza-ThinkPad-T420] [main] [springboot.security.SpringBootSecurityApplication] | No active profile set, falling back to default profiles: default
+[2020-05-10 22:40:48.180] [INFO] [jmendoza-ThinkPad-T420] [main] [internal.util.LogHelper] | HHH000204: Processing PersistenceUnitInfo [name: default]
+[2020-05-10 22:40:48.294] [INFO] [jmendoza-ThinkPad-T420] [main] [org.hibernate.Version] | HHH000412: Hibernate ORM core version 5.4.12.Final
+[2020-05-10 22:40:48.481] [INFO] [jmendoza-ThinkPad-T420] [main] [annotations.common.Version] | HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+[2020-05-10 22:40:48.748] [INFO] [jmendoza-ThinkPad-T420] [main] [hibernate.dialect.Dialect] | HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+[2020-05-10 22:40:50.047] [INFO] [jmendoza-ThinkPad-T420] [main] [platform.internal.JtaPlatformInitiator] | HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2020-05-10 22:40:50.769] [DEBUG] [jmendoza-ThinkPad-T420] [main] [security.filter.SecurityRequestFilter] | Filter 'securityRequestFilter' configured for use
+[2020-05-10 22:40:53.444] [INFO] [jmendoza-ThinkPad-T420] [main] [springboot.security.SpringBootSecurityApplication] | Started SpringBootSecurityApplication in 9.571 seconds (JVM running for 10.999)
+[2020-05-10 22:41:23.441] [ERROR] [jmendoza-ThinkPad-T420] [http-nio-8083-exec-1] [security.filter.SecurityRequestFilter] | io.jsonwebtoken.ExpiredJwtException: JWT expired at 2020-05-10T22:39:24Z. Current time: 2020-05-10T22:41:23Z, a difference of 119440 milliseconds.  Allowed clock skew: 0 milliseconds.
+[2020-05-10 22:41:52.697] [DEBUG] [jmendoza-ThinkPad-T420] [http-nio-8083-exec-2] [org.hibernate.SQL] | select user0_.id as col_0_0_ from users user0_ where user0_.email=? limit ?
+[2020-05-10 22:41:52.714] [ERROR] [jmendoza-ThinkPad-T420] [http-nio-8083-exec-2] [security.exception.GlobalExceptionHandler] | com.jmendoza.springboot.security.exception.GlobalException: This email is already registered
