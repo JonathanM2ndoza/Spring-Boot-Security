@@ -1,6 +1,6 @@
 # Spring-Boot-Security
 
-Example of RESTful API with Spring Boot and Spring Security. Securing URLs using JSON Web Tokens (JWT) and GrantedAuthority, JPA, DB PostgreSQL, Swagger for RESTful API Documentation. 
+Example of RESTful API with Spring Boot and Spring Security. Securing URLs using JSON Web Tokens (JWT) and GrantedAuthority, JPA, DB PostgreSQL, Log4j2 Asynchronous Loggers. Swagger for RESTful API Documentation. 
 
 ### Start a PostgreSQL server instance with Docker Hub
 
